@@ -1,5 +1,12 @@
 # DSB-Bot Beta
 
-DSB-Bot ist eine Website, die Vertretungspläne für die Main-Taunus-Schule **zuverlässig** lädt und anzeigt. Die Seite bietet verschiedene Themes, eine Historie der Pläne und weitere nützliche Funktionen. Sie ist für Schüler und Lehrer gedacht, die eine zuverlässige und benutzerfreundliche Alternative zur DSB-Mobile-App suchen.
+Dies ist die **Beta-Version** von DSB-Bot – einer alternativen Oberfläche zum Anzeigen der Vertretungspläne der Main-Taunus-Schule.
+Diese Version dient ausschließlich zu **Test- und Entwicklungszwecken**.
 
-Besuchee die Seite: [dsb-bot.github.io](https://dsb-bot.github.io) und [dsb-bot.github.io/dsb-beta-v2](https://dsb-bot.github.io/dsb-beta-v2)
+👉 Das stabile Hauptprojekt findest du hier: **[https://github.com/dsb-bot/dsb-bot](https://github.com/dsb-bot/dsb-bot)**
+
+## Hinweis
+
+Die Beta kann unvollständige Funktionen, experimentelle Features oder Fehler enthalten.
+
+---

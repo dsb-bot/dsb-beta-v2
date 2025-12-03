@@ -1,3 +1,4 @@
+// --- Bilder vorladen ---
 function preloadImages(urls) {
   urls.forEach(url => {
     const img = new Image();
@@ -17,39 +18,32 @@ preloadImages([
   "../assets/images/silver_background.jpg"
 ]);
 
+// --- Navbar- und Button-Logik ---
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const dropdowns = document.querySelectorAll(".dropdown");
+  const reloadButton = document.querySelector(".reload-button");
 
-fetch("../assets/html/footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-
-fetch("../assets/html/navbar.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-
-    // Dropdown-Logik erst nach dem Laden der Navbar ausführen
-    const dropdowns = document.querySelectorAll(".dropdown");
-
-    dropdowns.forEach((dropdown) => {
-      const button = dropdown.querySelector(".dropdown-button");
-      button.addEventListener("click", () => {
-        dropdown.classList.toggle("active");
-      });
-
-      // Optional: Schließe das Dropdown, wenn außerhalb geklickt wird
-      document.addEventListener("click", (event) => {
-        if (!dropdown.contains(event.target)) {
-          dropdown.classList.remove("active");
-        }
-      });
+  // Dropdown öffnen/schließen
+  dropdowns.forEach((dropdown) => {
+    const button = dropdown.querySelector(".dropdown-button");
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      dropdown.classList.toggle("active");
     });
   });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
+  // Wenn man scrollt → schließen
+  window.addEventListener("scroll", () => {
+    dropdowns.forEach((dropdown) => dropdown.classList.remove("active"));
+  });
 
+  // Wenn man irgendwo anders hinklickt → schließen
+  document.addEventListener("click", () => {
+    dropdowns.forEach((dropdown) => dropdown.classList.remove("active"));
+  });
+
+  // Navbar-Scroll-Effekt
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
       navbar.classList.add("scrolled");
@@ -57,4 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.classList.remove("scrolled");
     }
   });
+
+  console.log("Navbar und Dropdowns initialisiert ✅");
 });
